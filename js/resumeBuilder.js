@@ -11,7 +11,7 @@ This is empty on purpose! Your code to build the resume will go here.
  $("#header").prepend(formattedName); */
  
  var bio = {
-     "name" : "Norah Altwaim",
+	 "name" : "Norah Altwaim",
      "role": "Web Developer",
       "contacts" : {
             "mobile" : " 054xxxxxxx",
@@ -25,11 +25,11 @@ This is empty on purpose! Your code to build the resume will go here.
       "biopic": "images/abstract-q-c-300-300-1.jpg"
  };
 
-bio.display = function() {
+ bio.display = function() {
 	 var formattedName =  HTMLheaderName.replace("%data%",bio.name);
 	 $("#header").append(formattedName);
 	 var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-         $("#header").append(formattedRole);
+     $("#header").append(formattedRole);
 	 var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
 	 $("#topContacts, #footerContacts").append(formattedMobile);
 	 var formattedEmail= HTMLemail.replace("%data%",bio.contacts.email);
@@ -43,7 +43,7 @@ bio.display = function() {
 	 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	 $("#footerContacts").append(formattedWelcomeMsg);
 	 var formattedBioPic = HTMLbioPic.replace("%data%",bio.biopic);
-	 $("#header").append(formattedBioPic);         
+	 $("#header").append(formattedBioPic);     
 
      if (bio.skills.length > 0 ) {
     $('#header').append(HTMLskillsStart);
@@ -93,7 +93,7 @@ bio.display = function() {
 	 $(".education-entry:last").append(formattedLocation);
 	 var formattedMajors = HTMLschoolMajor.replace("%data%",school.majors);
 	 $(".education-entry:last").append(formattedMajors);
- } )
+ }) ;
     
      education.onlineCourses.forEach(function(onlineCourse) { 
      $("#education").append(HTMLonlineClasses);
@@ -106,11 +106,10 @@ bio.display = function() {
 	 $(".education-entry:last").append(formattedOnlineDates);
 	 var formattedOnlineUrl = HTMLonlineURL.replace("%data%",onlineCourse.url);
 	 $(".education-entry:last").append(formattedOnlineUrl);
- }  )
+ });
  };
    
  education.display();
-
 
  var work = {
 	 "jobs": [
@@ -128,7 +127,7 @@ bio.display = function() {
     $("#workExperience").append(HTMLworkStart);
 	 
 	 var formattedEmployer = HTMLworkEmployer.replace("%data%",job.employer);
-	 $(".work-entry:last").prepend(formattedEmployer);
+	 $(".work-entry:last").append(formattedEmployer);
 	 var formattedTitle = HTMLworkTitle.replace("%data%",job.title);
 	 $(".work-entry:last").prepend(formattedTitle);
 	 var formattedDates = HTMLworkDates.replace("%data%",job.dates);
@@ -137,9 +136,10 @@ bio.display = function() {
 	 $(".work-entry:last").prepend(formattedLocation);
 	 var formattedDescription = HTMLworkDescription.replace("%data%",job.description);
 	 $(".work-entry:last").prepend(formattedDescription);
- } )
+ } );
   };
   work.display();
+ 
   
  var projects = {
 	 "projects" : [
@@ -147,7 +147,7 @@ bio.display = function() {
             "title":"Future Library",
             "dates": "2015 - 2016",
             "description": "A website hosted on a cloud server",
-	    "images":["images/homepage1.jpg","images/bookspage.jpg"]  
+	        "images":["images/homepage1.jpg","images/bookspage.jpg"]  
 	 }
     ]   
 	 
@@ -166,7 +166,7 @@ projects.projects.forEach(function(project) {
 
 	 
 	 project.images.forEach(function(image) {
-         var formattedImages = HTMLprojectImage.replace("%data%",image);
+     var formattedImages = HTMLprojectImage.replace("%data%",image);
 	 $(".project-entry:last").append(formattedImages);
 	 
 	 });
@@ -181,4 +181,6 @@ projects.projects.forEach(function(project) {
 
 	
  
+
+
 

@@ -11,7 +11,7 @@ This is empty on purpose! Your code to build the resume will go here.
  $("#header").prepend(formattedName); */
  
  var bio = {
-	 "name" : "Norah Altwaim",
+     "name" : "Norah Altwaim",
      "role": "Web Developer",
       "contacts" : {
             "mobile" : " 054xxxxxxx",
@@ -25,25 +25,25 @@ This is empty on purpose! Your code to build the resume will go here.
       "biopic": "images/abstract-q-c-300-300-1.jpg"
  };
 
- bio.display = function() {
+bio.display = function() {
 	 var formattedName =  HTMLheaderName.replace("%data%",bio.name);
 	 $("#header").append(formattedName);
 	 var formattedRole = HTMLheaderRole.replace("%data%",bio.role);
-     $("#header").append(formattedRole);
+         $("#header").append(formattedRole);
 	 var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
-	 $("#topContacts").append(formattedMobile);
+	 $("#topContacts, #footerContacts").append(formattedMobile);
 	 var formattedEmail= HTMLemail.replace("%data%",bio.contacts.email);
-	 $("#topContacts").append(formattedEmail);
+	 $("#topContacts, #footerContacts").append(formattedEmail);
 	 var formattedTwitter = HTMLtwitter.replace("%data%",bio.contacts.twitter);
-	 $("#topContacts").append(formattedTwitter);
+	 $("#topContacts, #footerContacts").append(formattedTwitter);
 	 var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
-	 $("#topContacts").append(formattedGithub);
-	 var formattedLocation = HTMLlocation.replace("%data%",bio.location);
+	 $("#topContacts, #footerContacts").append(formattedGithub);
+	 var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
 	 $("#topContacts, #footerContacts").append(formattedLocation);
 	 var formattedWelcomeMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 	 $("#footerContacts").append(formattedWelcomeMsg);
 	 var formattedBioPic = HTMLbioPic.replace("%data%",bio.biopic);
-	 $("#header").append(formattedBioPic);     
+	 $("#header").append(formattedBioPic);         
 
      if (bio.skills.length > 0 ) {
     $('#header').append(HTMLskillsStart);

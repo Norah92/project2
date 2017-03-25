@@ -147,7 +147,7 @@ bio.display = function() {
             "title":"Future Library",
             "dates": "2015 - 2016",
             "description": "A website hosted on a cloud server",
-	    "images":["images\homepage1.jpg","images\bookspage.jpg"]  
+	    "images":["images/homepage1.jpg","images/bookspage.jpg"]  
 	 }
     ]   
 	 
@@ -166,7 +166,7 @@ projects.projects.forEach(function(project) {
 
 	 
 	 project.images.forEach(function(image) {
-     var formattedImages = HTMLprojectImage.replace("%data%",project.image);
+         var formattedImages = HTMLprojectImage.replace("%data%",image);
 	 $(".project-entry:last").append(formattedImages);
 	 
 	 });
